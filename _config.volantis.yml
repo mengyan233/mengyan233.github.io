@@ -298,7 +298,7 @@ article:
       # 默认文章作者（可在 front-matter 中覆盖）
       author:
         avatar:
-        name: 请设置文章作者
+        name: ICYE
         url: /
       # 文章创建日期
       date:
