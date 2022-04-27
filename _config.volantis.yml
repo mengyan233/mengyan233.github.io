@@ -371,7 +371,7 @@ rightmenu:
 comments:
   title: <i class='fa-solid fa-comments'></i> 评论
   subtitle:
-  service: giscus
+  service: gitalk
   # 可选评论系统 #
 
   # artalk
@@ -461,11 +461,11 @@ comments:
   gitalk:
     js: https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js
     # 配置项按照yml格式继续填写即可 除了 [id distractionFreeMode] 选项
-    clientID:
-    clientSecret:
-    repo:
-    owner:
-    admin: # []
+    clientID: 4711b11b2b453c62626a
+    clientSecret: ea00fb70ccea0e40737de480dd2d5584a28a9468
+    repo: mengyan233/mengyan233.github.io
+    owner: ICYE
+    admin:  [ICYE]
     path: # 全局评论地址
 
   # Vssue 暂不支持Pjax
