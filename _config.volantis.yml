@@ -6,7 +6,7 @@ cover:
     home: true
     archive: true
     others: false # can be written in front-matter 'cover: true'
-  background: https://pluvio.cn/images/cover8.jpg
+  background: other/bg.jpg
   # background: https://bing.ioliu.cn/v1/rand?w=1920&h=1200
   logo: # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-Cover@3x.png
   title: 'Hello World'
@@ -48,9 +48,15 @@ navbar:
     - name: 友链
       icon: fa-solid fa-link
       url: friends/
-    - name: 关于
-      icon: fa-solid fa-info-circle
-      url: about/
+    - name: 更多
+      icon: fa-solid fa-ellipsis-v
+      rows:
+      - name: 关于
+        icon: fa-solid fa-info-circle
+        url: about/
+      - name: 切换黑夜模式
+        icon: fa-solid fa-moon 
+        toggle: darkmode
   search: 不想搜索的程序员不是好程序员   # Search bar placeholder
 ############################### Navigation Bar ############################### > end
 
@@ -80,7 +86,7 @@ sidebar:
       url: /about/
       title: 凛梦
       subtitle: ICYE
-      jinrishici: true # Poetry Today. You can set a string, and it will be displayed when loading fails.
+      jinrishici: false # Poetry Today. You can set a string, and it will be displayed when loading fails.
       social:
         - icon: fa-solid fa-rss
           url: /atom.xml
