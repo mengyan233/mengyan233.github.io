@@ -975,7 +975,8 @@ color_scheme:
     site_footer: '#666'
 
     # 卡片背景色
-    card: '#fff'
+    card_unalpha: '#fff'
+    card: 'alpha(#fff,0.9)'
     # 卡片上的普通文字
     text: '#444'
 
@@ -1011,7 +1012,8 @@ color_scheme:
     # 网站页脚文字
     site_footer: '#aaa'
     # 卡片背景色
-    card: '#333'
+    card_unalpha: '#333'
+    card: 'alpha(#333,0.9)' 
     # 卡片上的普通文字
     text: '#eee'
 

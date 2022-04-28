@@ -10,3 +10,21 @@ for $injects_style in hexo-config('injects.style')
 #safearea{
   display: block
 }
+
+
+
+
+//固定网页背景
+
+#l_body{
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(https://iw233.cn/api.php?sort=pc);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+//文章页不透明
+
+#post.post
+  background-color: var(--color-card-unalpha)
+
