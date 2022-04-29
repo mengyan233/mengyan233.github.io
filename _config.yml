@@ -10,6 +10,8 @@ keywords:
 author: ICYE
 language: zh-cn
 timezone: 'Asia/Shanghai'
+favicon: /other/ICYE.png
+avatar: /other/ICYE.png
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
