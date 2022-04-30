@@ -9,14 +9,14 @@
     }
   </style>
   <script type="text/javascript">
-    var root = document.querySelector(':root')
+    var bgurlroot = document.querySelector(':root')
 
     if((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
         // document.root.style.setProperty('--bgurl', url('https://iw233.cn/api.php?sort=mp'));
-        root.style.setProperty('--bgurl', 'url("https://iw233.cn/api.php?sort=mp")');
+        bgurlroot.style.setProperty('--bgurl', 'url("https://iw233.cn/api.php?sort=mp")');
     } else {
         // document.root.style.setProperty('--bgurl', url('https://iw233.cn/api.php?sort=pc'));
-        root.style.setProperty('--bgurl', 'url("https://iw233.cn/api.php?sort=pc")');
+        bgurlroot.style.setProperty('--bgurl', 'url("https://iw233.cn/api.php?sort=pc")');
     }
 </script>
 
