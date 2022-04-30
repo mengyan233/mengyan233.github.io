@@ -82,7 +82,7 @@ sidebar:
       class: blogger
       display: [desktop, mobile] # [desktop, mobile]
       avatar: /other/ICYE.png #/media/org.volantis/blog/Logo-NavBar@3x.png # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
-      shape: rectangle # circle, rectangle
+      shape: circle # circle, rectangle
       url: /about/
       title: 凛梦
       subtitle: ICYE
