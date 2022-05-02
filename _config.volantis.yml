@@ -160,11 +160,11 @@ sidebar:
           unit: '篇'
         runtime:
           enable: true
-          data: '2020/01/01'    # 填写建站日期
+          data: '2022/04/10'    # 填写建站日期
           text: '已运行时间：'
           unit: '天'
         wordcount:
-          enable: true
+          enable: false
           text: '本站总字数：'   # 需要启用 wordcount
           unit: '字'
         visitcounter:
@@ -246,7 +246,7 @@ article:
     # show split line or not
     line_style: solid # hidden, solid, dashed, dotted
     # show readmore button
-    readmore: auto # auto, always
+    readmore: always # auto, always
   # 文章详情页面的文章卡片本体布局方案
   body:
     # 文章顶部信息
