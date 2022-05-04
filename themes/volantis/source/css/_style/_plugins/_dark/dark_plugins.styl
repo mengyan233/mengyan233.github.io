@@ -16,8 +16,14 @@ img,
 //side
 .widget.blogger .content .social-wrapper a.social:hover
   background: var(--color-card)
+.widget >.content ul.entry a .badge, .widget >.content ul.popular-posts a .badge
+  color: unset !important
 .content
   color: var(--color-p)
+.widget >.content a
+  color: var(--color-p) !important
+  &:hover
+    color: var(--color-list-hl) !important
 .note
   background: var(--color-block) !important
 div.tabs ul.nav-tabs li.tab.active a
@@ -34,7 +40,7 @@ if hexo-config('plugins.code_highlight') == "highlightjs"
     background: var(--color-card) !important
     background-color: var(--color-card) !important
   .highlight figcaption
-    background-color: #21252b
+    background-color: #14161a
   .highlight pre .line, .highlight pre .params
     color: rgba(158, 142, 142, 0.9)
 
@@ -56,6 +62,10 @@ blockquote p
 #archive-page .archive .all-tags ul li span
   color: var(--color-text)
   background: #6f6f72
+
+// btn-copy
+.btn-copy:hover
+  background: var(--color-site-body)
 
 if hexo-config('comments.service')=='gitalk'
   .gt-container .gt-header-textarea
@@ -88,6 +98,8 @@ if hexo-config('plugins.aplayer.enable')
     border-top: 1px solid var(--color-card)
   .aplayer.aplayer-withlist .aplayer-info
     border-bottom: 1px solid var(--color-block)
+  .aplayer .aplayer-notice
+    background-color: var(--color-site-bg) !important
 
 if hexo-config('comments.service')=='twikoo'
   .OwO

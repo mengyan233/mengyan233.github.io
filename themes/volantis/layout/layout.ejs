@@ -2,28 +2,17 @@
 <html lang="<%- config.language %>">
   <%- partial('_partial/scripts/_ctrl') _%>
   <%- partial('_partial/head') _%>
-
-  <style>
-    :root{
-      --bgurl: url("");
-    }
-  </style>
-  <script type="text/javascript">
-    var bgurlroot = document.querySelector(':root')
-
-    if((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
-        // document.root.style.setProperty('--bgurl', url('https://iw233.cn/api.php?sort=mp'));
-        bgurlroot.style.setProperty('--bgurl', 'url("https://iw233.cn/api.php?sort=mp")');
-    } else {
-        // document.root.style.setProperty('--bgurl', url('https://iw233.cn/api.php?sort=pc'));
-        bgurlroot.style.setProperty('--bgurl', 'url("https://iw233.cn/api.php?sort=pc")');
-    }
-</script>
-
-
-
-
   <body itemscope itemtype="http://schema.org/WebPage">
+    <!-- import body_begin begin-->
+    <%_ if (config.import && config.import.body_begin){ _%>
+      <%_ ([...config.import.body_begin]).forEach(function(item){ _%>
+        <%- item %>
+      <%_ }) _%>
+    <%_ } _%>
+    <!-- import body_begin end-->
+    <!-- Custom Files bodyBegin begin-->
+    <%- volantis_inject('bodyBegin') %>
+    <!-- Custom Files bodyBegin end-->
     <%- partial('_partial/header', null, {cache: false, path: path}) %>
     <div id="l_body">
       <%- partial('_partial/cover') %>
@@ -42,8 +31,15 @@
         <%- partial('_plugins/pjax/index') %>
       <% } %>
     </div>
-  <!-- Custom Files bodyEnd begin-->
-  <%- volantis_inject('bodyEnd') %>
-  <!-- Custom Files bodyEnd end-->
+    <!-- import body_end begin-->
+    <%_ if (config.import && config.import.body_end){ _%>
+      <%_ ([...config.import.body_end]).forEach(function(item){ _%>
+        <%- item %>
+      <%_ }) _%>
+    <%_ } _%>
+    <!-- import body_end end-->
+    <!-- Custom Files bodyEnd begin-->
+    <%- volantis_inject('bodyEnd') %>
+    <!-- Custom Files bodyEnd end-->
   </body>
 </html>

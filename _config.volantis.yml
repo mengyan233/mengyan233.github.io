@@ -15,15 +15,15 @@ cover:
   features:
     - name: 主页
       icon: #
-      img: /media/twemoji/assets/svg/1f4f0.svg # https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f5c3.svg
+      img: volantis-static/media/twemoji/assets/svg/1f4f0.svg # https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f5c3.svg
       url: /
     - name: 归档
       icon: #
-      img: /media/twemoji/assets/svg/1f5c3.svg # https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f5c3.svg
+      img: volantis-static/media/twemoji/assets/svg/1f5c3.svg # https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f5c3.svg
       url: archives/
     - name: 关于
       icon: #
-      img: /media/twemoji/assets/svg/1f516.svg #  https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f516.svg
+      img: volantis-static/media/twemoji/assets/svg/1f516.svg #  https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f516.svg
       url: about/
 
 
@@ -35,7 +35,7 @@ cover:
 navbar:
   visiable: always # always, auto
   logo: # choose [img] or [icon + title]
-    img: /media/org.volantis/blog/Logo-NavBar@3x.png # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
+    img: volantis-static/media/org.volantis/blog/Logo-NavBar@3x.png # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
     icon:
     title:
   menu:
@@ -339,10 +339,136 @@ article:
 
 
 
+# ############################### Rightmenu ############################### > start
+# # 自定义右键菜单
+# rightmenu:
+#   enable: true
+#   faicon: fa              # 公共图标类型 fa fal fa-solid fa-duotone
+#   # hr: 分割线, music: 音乐控制器
+#   layout: [home, hr, help, examples, contributors, hr, source_docs, source_theme, hr, print, darkmode, reading, music]
+#   ### 可选功能项 ###
+#   print:                  # 只有文章页才允许自定义打印
+#     name: 打印页面
+#     icon: fa fa-print
+#   darkmode:        # 需开启 plugins.darkmodejs
+#     name: 暗黑模式
+#     icon: fa fa-moon
+#   reading:
+#     name: 阅读模式
+#     icon: fa fa-book-open
+#   customPicUrl:    # 右键的图片复制：只有 Chrome 支持，且只支持 PNG 格式的图片。
+#     enable: false  # 如果使用了对象存储且开启了自适应 Webp，那么可以提供额外的链接用以替换图片的访问地址
+#     old: #https://static.inkss.cn/img/article/
+#     new: #https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@master/img/article/
+#   music:           # 当设定全局音乐播放器时，是否一直显示音乐控制菜单。false：仅当音乐播放时启用
+#     alwaysShow: true
+    
+#   archives:
+#     name: 归档
+#     icon: fa-solid fa-archive
+#     url: archives/
+# ############################### Rightmenu ############################### > end
+
 ############################### Rightmenu ############################### > start
+
+### 自定义右键 新
+rightmenus:
+  enable: true
+  # 右键菜单项及加载顺序
+  # 内容示例：plugins.[组名], menus.[组名], hr(分割线，推荐去线留白), music(音乐控制器)
+  order: 
+    - plugins.navigation
+    - hr
+    - plugins.inputBox
+    - plugins.seletctText
+    - plugins.elementCheck
+    - plugins.elementImage
+    - menus.link
+    - hr
+    - menus.darkMode
+    - plugins.articlePage
+    - music
+  ############################
+  # - {id: '', name: '', icon: '', link: '', event: '', group: ''}
+  # id: 唯一值
+  # name: 用于菜单名称显示
+  # icon: 用于菜单图标显示
+  # link: 跳转链接
+  # event: 事件，当输入内容不为内置事件时，作 JavaScript 代码执行
+  # group: 菜单项所处分组名称
+  # 注： 
+  # 1. link/event 二选一，同时出现时仅处理 link
+  # 2. 内置事件列表： copyText, copyLink, copyPaste, copyAll, copyCut, copyImg, printMode, readMode
+  # 3. 内置组列表：navigation, inputBox, seletctText, elementCheck, elementImage, articlePage
+  # 4. plugins 列允许自定义组内项目
+  # 5. menus   列允许自定义组及其内容
+  # 6. 除 navigation 外的内置组，在显示时会隐藏含 link 属性的菜单项
+  ###########################
+  # 基础项设置
+  options:
+    # 图标前缀 fa-solid, fa-regular, fa-light, fa-thin, fa-duotone, fa-brands
+    iconPrefix: fa-solid
+    # 例外，在 articlePage 组显示时（文章页）时依旧显示含 link 属性的菜单项
+    articleShowLink: false
+    # 当设定全局音乐播放器时，是否一直显示音乐控制菜单。false：仅当音乐播放时启用
+    musicAlwaysShow: false
+    # 适用于复制图片文件的场景，当图片源未设置 Access-Control-Allow-Origin 时，图片复制由于 CORS 问题失败
+    # 你可以自行部署相应项目解决该问题，详见：https://github.com/Rob--W/cors-anywhere 或者 https://github.com/Zibri/cloudflare-cors-anywhere
+    corsAnywhere: 
+  # 右键内置组，预置实现
+  plugins:
+    # 导航组件
+    # 横向排列，共用一行，仅显示图标 (原则上支持的数量不限)
+    navigation: 
+      - {id: 'left', name: '转到上一页', icon: 'fa-solid fa-arrow-left', event: 'history.back()', group: 'navigation'}
+      - {id: 'right', name: '转到下一页', icon: 'fa-solid fa-arrow-right', event: 'history.forward()', group: 'navigation'}
+      - {id: 'redo', name: '刷新当前页面', icon: 'fa-solid fa-redo', event: 'window.location.reload()', group: 'navigation'}
+      - {id: 'up', name: '回到顶部', icon: 'fa-solid fa-arrow-up', event: 'VolantisApp.scrolltoElement(volantis.dom.bodyAnchor)', group: 'navigation'}
+      #- {id: 'home', name: '回到首页', icon: 'fa-solid fa-home', link: '/', group: 'navigation'}
+    # 文本输入框相关组件
+    # 生效于 input/textarea，粘贴、剪切、全选
+    inputBox:
+      - {id: 'copyPaste', name: '粘贴文本', icon: 'fa-solid fa-paste', event: 'copyPaste', group: 'inputBox'}
+      - {id: 'copyAll', name: '全选文本', icon: 'fa-solid fa-object-ungroup', event: 'copyAll', group: 'inputBox'}
+      - {id: 'copyCut', name: '剪切文本', icon: 'fa-solid fa-cut', event: 'copyCut', group: 'inputBox'}
+    # 文本选中类组件
+    # 生效于右键选中文本，__text__ 为选中的文本。     
+    seletctText:
+      - {id: 'copyText', name: '复制文本', icon: 'fa-solid fa-copy', event: 'copyText', group: 'seletctText'}
+      - {id: 'searchWord', name: '站内搜索', icon: 'fa-solid fa-search', event: 'OpenSearch(__text__)', group: 'seletctText'}
+      - {id: 'bingSearch', name: '必应搜索', icon: 'fa-solid fa-search', event: 'window.open(`https://cn.bing.com/search?q=${__text__}`)', group: 'seletctText'}
+      #- {id: 'googleSearch', name: '谷歌搜索', icon: 'fa-solid fa-search', event: 'window.open(`https://www.google.com/search?q=${__text__}`)', group: 'seletctText'}
+    # 链接判断组件
+    # 生效于链接处的右键行为，__link__ 为链接地址
+    elementCheck:
+      - {id: 'openTab', name: '新标签页打开', icon: 'fa-solid fa-external-link-square-alt', event: 'window.open(__link__)', group: 'elementCheck'}
+      - {id: 'copyLink', name: '复制链接地址', icon: 'fa-solid fa-link', event: 'copyLink', group: 'elementCheck'}
+    # 图片判断类组件
+    # 生效于图片类的右键行为，__link__ 为链接地址
+    elementImage:
+      - {id: 'copyImg', name: '复制图片', icon: 'fa-solid fa-image', event: 'copyImg', group: 'elementImage'}
+      - {id: 'googleImg', name: '谷歌识图', icon: 'fa-solid fa-images', event: 'window.open(`https://www.google.com.hk/searchbyimage?image_url=${__link__}`)', group: 'elementImage'}
+    # 文章页面组件
+    # 生效于 post.article 页面
+    articlePage:
+      - {id: 'printMode', name: '打印页面', icon: 'fa-solid fa-print', event: 'printMode', group: 'articlePage'}
+      - {id: 'readMode', name: '阅读模式', icon: 'fa-solid fa-book-open', event: 'readMode', group: 'articlePage'}
+  # 右键自定义菜单区域
+  menus:
+    link:
+      - {id: 'help', name: '常见问题', icon: 'fa-solid fa-question', link: 'https://volantis.js.org/faqs/', group: 'link'}
+      - {id: 'examples', name: '示例博客', icon: 'fa-solid fa-rss', link: 'https://volantis.js.org/examples/', group: 'link'}
+      - {id: 'contributors', name: '加入社区', icon: 'fa-solid fa-fan', link: 'https://volantis.js.org/contributors/', group: 'link'}
+      - hr
+      - {id: 'source_docs', name: '本站源码', icon: 'fa-solid fa-code-branch', link: 'https://github.com/volantis-x/volantis-docs/', group: 'link'}
+      - {id: 'source_theme', name: '主题源码', icon: 'fa-solid fa-code-branch', link: 'https://github.com/volantis-x/hexo-theme-volantis/', group: 'link'}
+    darkMode: 
+      - {id: 'darkMode', name: '暗黑模式', icon: 'fa-solid fa-moon', event: 'volantis.dark.toggle()', group: 'darkMode'}
+###
+
 # 自定义右键菜单
 rightmenu:
-  enable: true
+  enable: false
   faicon: fa              # 公共图标类型 fa fal fa-solid fa-duotone
   # hr: 分割线, music: 音乐控制器
   layout: [home, hr, help, examples, contributors, hr, source_docs, source_theme, hr, print, darkmode, reading, music]
@@ -362,12 +488,29 @@ rightmenu:
     new: #https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@master/img/article/
   music:           # 当设定全局音乐播放器时，是否一直显示音乐控制菜单。false：仅当音乐播放时启用
     alwaysShow: true
-    
-  archives:
-    name: 归档
-    icon: fa-solid fa-archive
-    url: archives/
+  ### 自定义菜单 ###
+  help:
+    name: 常见问题
+    icon: fa fa-question
+    url: https://volantis.js.org/faqs/
+  examples:
+    name: 示例博客
+    icon: fa fa-rss
+    url: https://volantis.js.org/examples/
+  contributors:
+    name: 加入社区
+    icon: fa fa-fan fa-spin
+    url: https://volantis.js.org/contributors/
+  source_docs:
+    name: 本站源码
+    icon: fa fa-code-branch
+    url: https://github.com/volantis-x/volantis-docs/
+  source_theme:
+    name: 主题源码
+    icon: fa fa-code-branch
+    url: https://github.com/volantis-x/hexo-theme-volantis/
 ############################### Rightmenu ############################### > end
+
 
 
 
@@ -540,23 +683,23 @@ analytics:
     custom_api_server: # 国际版一般不需要写，除非自定义了 API Server
 ############################### Analytics ############################### > end
 
-########################### CustomCss #########################################
+# ########################### CustomCss #########################################
 
-custom_files:
-  first: source/_volantis/first.styl
-  style: source/_volantis/style.styl
-  dark: source/_volantis/dark.styl
-  darkVar: source/_volantis/darkVar.styl
-  headBegin: source/_volantis/headBegin.ejs
-  headEnd: source/_volantis/headEnd.ejs
-  header: source/_volantis/header.ejs
-  topMeta: source/_volantis/topMeta.ejs
-  bottomMeta: source/_volantis/bottomMeta.ejs
-  postEnd: source/_volantis/postEnd.ejs
-  bodyBegin: source/_volantis/bodyBegin.ejs
-  bodyEnd: source/_volantis/bodyEnd.ejs
+# custom_files:
+#   first: source/_volantis/first.styl
+#   style: source/_volantis/style.styl
+#   dark: source/_volantis/dark.styl
+#   darkVar: source/_volantis/darkVar.styl
+#   headBegin: source/_volantis/headBegin.ejs
+#   headEnd: source/_volantis/headEnd.ejs
+#   header: source/_volantis/header.ejs
+#   topMeta: source/_volantis/topMeta.ejs
+#   bottomMeta: source/_volantis/bottomMeta.ejs
+#   postEnd: source/_volantis/postEnd.ejs
+#   bodyBegin: source/_volantis/bodyBegin.ejs
+#   bodyEnd: source/_volantis/bodyEnd.ejs
 
-########################### CustomCss #########################################
+# ########################### CustomCss #########################################
 
 
 ############################### Color Scheme ############################### > start
@@ -566,9 +709,9 @@ color_scheme:
   # 通用颜色
   common:
     # 主题色
-    theme: '#44D7B6'
+    theme: '#3dd9b6'
     # 链接色
-    link: '#1b79c4'
+    link: '#2092ec'
     # 按钮色
     button: '#44D7B6'
     # 鼠标放到交互元素上时的色
@@ -618,40 +761,42 @@ color_scheme:
   # ------------
   # 暗色主题
   dark:
-    # 网站背景色
-    site_bg: '#222'
+    # 网站最深底色            # Dark Grey 1
+    site_bd: '#121212'
+    # 网站背景色              # Dark Grey 2
+    site_bg: '#1f1f1f'
+    # 卡片背景色              # Dark Grey 3
+    card_unalpha: '#262626'
+    card: 'alpha(#262626, 0.8)' 
     # 网站背景上的文字
-    site_inner: '#eee'
+    site_inner: '#eeeeeede'
     # 网站页脚文字
-    site_footer: '#aaa'
-    # 卡片背景色
-    card_unalpha: '#333'
-    card: 'alpha(#333, 0.8)' 
+    site_footer: '#aaaaaade'
     # 卡片上的普通文字
-    text: '#eee'
+    text: '#eeeeeede'
 
-    # 区块和代码块背景色
-    block: '#3a3a3a'
-    # 代码块高亮时的背景色
-    codeblock: '#343a3c'
+    # 区块和代码块背景色       # Dark Grey 4
+    block: '#434343'
+    # 代码块高亮时的背景色     # Dark Grey 2
+    codeblock: '#1f1f1f'
     # 行内代码颜色
     inlinecode: '#D56D28'
 
-    # 文章部分
-    h1: '#eee'
-    h2: '#eee'
-    h3: '#ddd'
-    h4: '#ddd'
-    h5: '#ddd'
-    h6: '#ddd'
-    p: '#bbb'
+    # 文章部分 高强度文本的不透明度应为87％ 中等重点文字适用于60％
+    h1: '#FFFFFFde'            #  Dark Grey 8
+    h2: '#FFFFFFde'
+    h3: '#FFFFFF99'            #  Dark Grey 7
+    h4: '#FFFFFF99'
+    h5: '#FFFFFF99'
+    h6: '#FFFFFF99'
+    p: '#d9d9d9de'           #  Dark Grey 6
 
-    # 列表文字
-    list: '#aaa'
+    # 列表文字                #  Dark Grey 6
+    list: '#d9d9d9de'
     # 列表 hover 时的文字
     list_hl: 'mix($color-theme, #fff, 80)'
-    # 辅助性文字
-    meta: '#888'
+    # 辅助性文字              #  Dark Grey 5
+    meta: '#bfbfbfde'
     # 夜间图片亮度
     brightness: 70%
 ############################### Color Scheme ############################### > end

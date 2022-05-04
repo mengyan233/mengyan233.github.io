@@ -1,12 +1,18 @@
 //defines
+//$color-card-unalpha = convert(hexo-config('color_scheme.light.card_unalpha'))
+//$color-dark-card = convert(hexo-config('color_scheme.dark.card_unalpha'))
+//root:
+//  --color-card-unalpha: $color-card_unalpha
+//fitst_dark
+//  --color-dark-card-unalpha: $color-dark-card
 
-
-
+:root
+  --bgBrightness: #00000026;
 
 //固定网页背景
 
 #l_body{
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), var(--bgurl);
+    background: linear-gradient(var(--bgBrightness), var(--bgBrightness)), var(--bgurl);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -14,5 +20,5 @@
 
 //文章页不透明
 
-#post.post
-  background-color: var(--color-card-unalpha)
+//#post.post
+//  background-color: var(--color-card-unalpha)
