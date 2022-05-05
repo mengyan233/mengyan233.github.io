@@ -506,22 +506,22 @@ rightmenu:
     name: 常见问题
     icon: fa fa-question
     url: https://volantis.js.org/faqs/
-  examples:
-    name: 示例博客
-    icon: fa fa-rss
-    url: https://volantis.js.org/examples/
-  contributors:
-    name: 加入社区
-    icon: fa fa-fan fa-spin
-    url: https://volantis.js.org/contributors/
-  source_docs:
-    name: 本站源码
-    icon: fa fa-code-branch
-    url: https://github.com/volantis-x/volantis-docs/
-  source_theme:
-    name: 主题源码
-    icon: fa fa-code-branch
-    url: https://github.com/volantis-x/hexo-theme-volantis/
+  # examples:
+  #   name: 示例博客
+  #   icon: fa fa-rss
+  #   url: https://volantis.js.org/examples/
+  # contributors:
+  #   name: 加入社区
+  #   icon: fa fa-fan fa-spin
+  #   url: https://volantis.js.org/contributors/
+  # source_docs:
+  #   name: 本站源码
+  #   icon: fa fa-code-branch
+  #   url: https://github.com/volantis-x/volantis-docs/
+  # source_theme:
+  #   name: 主题源码
+  #   icon: fa fa-code-branch
+  #   url: https://github.com/volantis-x/hexo-theme-volantis/
 ############################### Rightmenu ############################### > end
 
 
