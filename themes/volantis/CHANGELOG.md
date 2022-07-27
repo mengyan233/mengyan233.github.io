@@ -1,5 +1,73 @@
 # Changelog
 
+## [5.7.1](https://github.com/volantis-x/hexo-theme-volantis/compare/v5.7.0...v5.7.1) (2022-07-26)
+
+
+### Bug Fixes
+
+* drop node 14 ([694046b](https://github.com/volantis-x/hexo-theme-volantis/commit/694046b934be663001226fedd4fb6b2535ec9d59))
+
+## [5.7.0](https://github.com/volantis-x/hexo-theme-volantis/compare/v5.6.0...v5.7.0) (2022-07-15)
+
+
+### Features
+
+* add LingQue.Monitor ([f6f166e](https://github.com/volantis-x/hexo-theme-volantis/commit/f6f166e0e2834bc3c765383b4c21643df9bf7dc6))
+* **tag:** add pandown ([#785](https://github.com/volantis-x/hexo-theme-volantis/issues/785)) ([efc1966](https://github.com/volantis-x/hexo-theme-volantis/commit/efc1966f1b976a0c59ef5b08da41838bda0e7a83))
+
+
+### Bug Fixes
+
+* **artalk:** imageUploader ([#782](https://github.com/volantis-x/hexo-theme-volantis/issues/782)) ([c573d0c](https://github.com/volantis-x/hexo-theme-volantis/commit/c573d0c59b3dda882d88475ce44635647c64e4eb))
+
+## [5.6.0](https://github.com/volantis-x/hexo-theme-volantis/compare/v5.5.0...v5.6.0) (2022-06-30)
+
+
+### ⚠ BREAKING CHANGES
+
+* **artalk:** imgUploader -> imageUploader
+
+### Bug Fixes
+
+* **comment:** disqus ([6656237](https://github.com/volantis-x/hexo-theme-volantis/commit/665623793b7610f2d9be8c1338c23e82f1b98159))
+* **highlightjs:** cdn npm ([2caa1fb](https://github.com/volantis-x/hexo-theme-volantis/commit/2caa1fb1e630381ed9ea019038a4d8580d17703c))
+* **meta:** counter ([7470b7a](https://github.com/volantis-x/hexo-theme-volantis/commit/7470b7abcfbc545e5552363c85b9562e42e75541))
+* **rightmenu:** [#779](https://github.com/volantis-x/hexo-theme-volantis/issues/779) ([9023ce5](https://github.com/volantis-x/hexo-theme-volantis/commit/9023ce573d8ad0595990dafb13553817d749fee8))
+
+
+### Code Refactoring
+
+* **artalk:** imgUploader -> imageUploader ([8cde195](https://github.com/volantis-x/hexo-theme-volantis/commit/8cde195b30c2111338ac2bcec45bcaf145867ccf))
+
+
+### Miscellaneous Chores
+
+* release 5.6.0 ([cd60196](https://github.com/volantis-x/hexo-theme-volantis/commit/cd60196d4dc730d9d8d238ad1958f868b103ebfb))
+
+## [5.5.0](https://github.com/volantis-x/hexo-theme-volantis/compare/v5.4.0...v5.5.0) (2022-06-18)
+
+
+### Features
+
+* **copyright:** 精确到文章的版权声明 ([1621fbb](https://github.com/volantis-x/hexo-theme-volantis/commit/1621fbb211057b037bb28328a364fbe4fc32df5a))
+* **scrollreveal&style.css:** slow network ([c31f54a](https://github.com/volantis-x/hexo-theme-volantis/commit/c31f54a01537bd68b83ed289a406b154499d8f21))
+* **widget:** 允许侧边栏卡片的粘性定位 ([5d5c9d5](https://github.com/volantis-x/hexo-theme-volantis/commit/5d5c9d5e7e288eb654922c4659dfdc5a1442ceda))
+
+
+### Bug Fixes
+
+* **artalk:** 深色模式主动切换修复 ([e4a7e2d](https://github.com/volantis-x/hexo-theme-volantis/commit/e4a7e2d247a8ab63365b1c0c6fc04e8f9bdb5656))
+* **background:** [#776](https://github.com/volantis-x/hexo-theme-volantis/issues/776) bing ([26dc230](https://github.com/volantis-x/hexo-theme-volantis/commit/26dc230ab6377356edb86a21e7c7267433110ac1))
+* **comment:** 指定地址的评论计数统计 ([482601a](https://github.com/volantis-x/hexo-theme-volantis/commit/482601ae02ce686bce1aff6b961dd6ead28a6985))
+* **rightmenu:** aplayer disable ([1c89b63](https://github.com/volantis-x/hexo-theme-volantis/commit/1c89b631371c89975f9977550d8a5c2f586b5fd5))
+* **walinecount:** 移除重复代码 ([2e2e05d](https://github.com/volantis-x/hexo-theme-volantis/commit/2e2e05d7ca19e94f6036c48b3448c58d0401e10b))
+* **widget:** z-index ([c9c823c](https://github.com/volantis-x/hexo-theme-volantis/commit/c9c823cf772f5c26f54ddc82064e5bba79c76331))
+
+
+### Performance Improvements
+
+* **GLOBAL_CONFIG:** 减少不必要的配置输出 ([2aa234f](https://github.com/volantis-x/hexo-theme-volantis/commit/2aa234f47be05c711f4af526d0e293f5dd8e7926))
+
 ## [5.4.0](https://github.com/volantis-x/hexo-theme-volantis/compare/v5.3.2...v5.4.0) (2022-06-09)
 
 
