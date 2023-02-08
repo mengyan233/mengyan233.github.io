@@ -840,3 +840,12 @@ site_footer:
   # You can add your own property here. (Support markdown, for example: br: '<br>')
   br: '<br>'
 ############################### Site Footer ############################### > end
+
+
+############################### Site Footer ############################### > end
+import:
+  head_begin:
+    - <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
+
+
+############################### Site Footer ############################### > end
